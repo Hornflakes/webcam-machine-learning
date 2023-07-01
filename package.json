@@ -13,6 +13,9 @@
         "vite": "^4.3.9"
     },
     "dependencies": {
+        "@tensorflow-models/knn-classifier": "^1.2.4",
+        "@tensorflow-models/mobilenet": "^2.1.0",
+        "@tensorflow/tfjs": "^4.8.0",
         "autoprefixer": "^10.4.14",
         "postcss": "^8.4.24",
         "prettier": "^2.8.8",

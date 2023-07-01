@@ -1,5 +1,29 @@
 <main class="flex flex-col items-center">
-    <div class="flex mt-40">
-        <video autoplay width="480"></video>
+    <div class="flex items-center gap-32 my-40">
+        <div class="flex flex-col items-center gap-8">
+            <div id="left-confidence" class="font-bold"></div>
+            <button id="left" class="h-12 w-36 rounded font-medium bg-rose-600 hover:bg-rose-700 active:bg-orange-600">
+                Left
+            </button>
+            <div id="left-examples">0 examples</div>
+        </div>
+
+        <video autoplay width="512" class="-scale-x-100"></video>
+
+        <div class="flex flex-col items-center gap-8">
+            <div id="right-confidence" class="font-bold"></div>
+            <button id="right" class="h-12 w-36 rounded font-medium bg-rose-600 hover:bg-rose-700 active:bg-orange-600">
+                Right
+            </button>
+            <div id="right-examples">0 examples</div>
+        </div>
     </div>
+
+    <button
+        id="predict"
+        disabled
+        class="h-12 w-36 rounded font-medium bg-rose-600 hover:bg-rose-700 disabled:bg-rose-300 active:bg-orange-600"
+    >
+        Predict
+    </button>
 </main>
