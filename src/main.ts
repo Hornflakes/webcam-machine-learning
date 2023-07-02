@@ -5,6 +5,7 @@ import * as mobilenet from '@tensorflow-models/mobilenet';
 
 type Labels = 'left' | 'right';
 type State = 'training' | 'thinking' | 'idle';
+
 let trainingLabel: Labels;
 let state: State;
 
@@ -17,7 +18,14 @@ const html = await res.text();
 document.body.insertAdjacentHTML('beforeend', html);
 
 const video = document.querySelector<HTMLVideoElement>('video');
-navigator.mediaDevices.getUserMedia({ video: true, audio: false }).then((stream) => (video.srcObject = stream));
+navigator.mediaDevices.getUserMedia({ video: true, audio: false }).then((stream) => {
+    video.srcObject = stream;
+
+    const main = document.querySelector('main');
+    main.classList.replace('hidden', 'flex');
+    const loading = document.querySelector('#loading');
+    loading.classList.replace('flex', 'hidden');
+});
 
 const leftConfidenceDiv = document.querySelector<HTMLDivElement>('#left-confidence');
 const leftExamplesDiv = document.querySelector<HTMLDivElement>('#left-examples');
